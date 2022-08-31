@@ -3,6 +3,8 @@ import Hash from '@ioc:Adonis/Core/Hash'
 import { column, beforeSave, BaseModel } from '@ioc:Adonis/Lucid/Orm'
 
 export default class User extends BaseModel {
+  public static table = 'users'
+
   @column({ isPrimary: true })
   public id: number
 
@@ -11,7 +13,6 @@ export default class User extends BaseModel {
 
   @column()
   public email: string
-
 
   @column({ serializeAs: null })
   public password: string
